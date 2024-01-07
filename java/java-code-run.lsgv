@@ -1,0 +1,71 @@
+(! :layout "dot" :splines "ortho" :rainbow-color #x900000 :rainbow-count 18)
+
+(+@ :type file
+    (file-code "Main.java")
+    (file-class "Main.class")
+    (file-do "Main.so")
+    (file-bin "Main"))
+
+(+@ :type program
+    (cmd-javac "javac")
+    (cmd-java "java")
+    (cmd-jaotc "jaotc")
+    (cmd-ni "native-image"))
+
+(+@ :type core
+    (tech-jit "JIT")
+    (jit-hs "Hotspot"))
+
+(+@ :type component
+    (jvm-int "Interpreter")
+    (jit-c1 "C1\nCompiler")
+    (jit-c2 "C2\n Compiler")
+    (jit-counter "JIT\nCounter"))
+
+(+@ :type machine
+    (jvm-exec "JVM")
+    (mac-exec "Machine"))
+
+(+@ :type data
+    (code-cache "Code Cache")
+    (code-mapping "Bytecode to\nMachine code\nMapping"))
+
+(-> :type has
+    tech-jit (jit-c1 jit-c2 jit-counter jit-hs))
+
+(-> :type has :constraint "true"
+    jvm-exec (cmd-javac cmd-jaotc cmd-java cmd-ni))
+
+(-> :type has :constraint "false"
+    jit-hs jit-c2)
+
+(-> :type has
+    jvm-exec (jvm-int tech-jit))
+
+(-> :type use
+    mac-exec (jvm-exec file-bin))
+
+(-> :type use
+    jvm-int (code-mapping code-cache))
+
+(-> :type make
+    (jit-c1 jit-c2) code-cache)
+
+(-> :type use cmd-javac file-code)
+(-> :type make cmd-javac file-class)
+
+(-> :type use cmd-jaotc file-class)
+(-> :type make cmd-jaotc file-do)
+
+(-> :type use cmd-java (file-do file-class))
+
+(-> :type use cmd-ni (file-class file-code))
+(-> :type make cmd-ni file-bin)
+
+(+@ :type none mac-parent cmd-child)
+(-> :type none mac-parent mac-exec)
+(-> :type none cmd-ni cmd-child)
+
+(=@ file-bin file-do file-class file-code mac-parent)
+(=@ code-cache code-mapping)
+(=@ tech-jit jvm-int cmd-child)

@@ -1,0 +1,78 @@
+(! :layout "dot" :splines "polyline")
+
+(+@ :type machine
+    (gvm "GraalVM")
+    (svm "Substrate VM"))
+
+(+@ :type component
+    (gjit "Graal JIT")
+    (lgrl "libgraal")
+    (jgrl "jargraal")
+    (jit-c2 "JIT C2")
+    (ir-p "Profiler")
+    (ir-icg "Intermediate\nCode Generator")
+    (ir-co "Code Optimizer")
+    (ir-tcg "Target Code\nGenerator")
+    (t "Truffle")
+    (i "Interpreter")
+    (s "Sulong"))
+
+(+@ :type function
+    (jvmci "JVMCI"))
+
+(+@ :type program
+    (ni "native-image")
+    graalpy
+    nodejs)
+
+(+@ :type note
+    (aot "AOT")
+    (jit "JIT"))
+
+(+@ :type feature
+    (ed "Edition")
+    (ed-ce "Community")
+    (ed-ee "Enterprise")
+    (g-ir "Graal\nIntermediate\nRepresentation")
+    (t-l "Language\nImplementation\nFramework")
+    (t-p "Polyglot API")
+    (t-i "Instrumentation")
+    (s-ir "LLVM IR Interpreter")
+    (pgo "Profile Guided\nOptimization"))
+
+(+@ :type signature
+    (gpl "GPL 2")
+    (otn "OTN"))
+
+(+@ :type file
+    (t-l-js "JavaScript")
+    (t-l-ruby "Ruby")
+    (t-l-py "Python")
+    (t-l-r "R")
+    (t-l-java "Java on Truffle")
+    (s-l-c "C/C++")
+    (s-l-wa "WebAssembly")
+    (s-l-rs "Rust"))
+
+(-> :type has
+    gvm (ed (ed-ce ed-ee (pgo))
+         jit-c2
+         (gjit (lgrl jgrl g-ir (ir-p ir-icg ir-co ir-tcg)))
+         jvmci
+         i
+         t (s (s-ir (s-l-c s-l-wa s-l-rs)) t-p t-i t-l (t-l-js t-l-ruby t-l-py t-l-r t-l-java))
+         ni nodejs graalpy))
+
+(-> :type use ni svm)
+(-> :type use ni lgrl)
+
+(-> :type use ed-ce gpl)
+(-> :type use ed-ee otn)
+
+(-> :type use :constraint "false" gjit jvmci)
+
+(-> :type mean :constraint "false" lgrl aot)
+(-> :type mean :constraint "false" jgrl jit)
+
+(=@ gvm svm)
+(=@ aot jit gjit)

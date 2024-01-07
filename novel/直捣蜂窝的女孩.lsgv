@@ -1,0 +1,162 @@
+(! :layout "fdp" :sep "0.9" :splines "true" :rainbow-count 12)
+
+(+@ :type rainbow-halo :shape "doublecircle"
+    布隆维斯特
+    莎兰德)
+
+(+@ :type rainbow-halo
+    约纳森
+    爱莉卡
+    尼德曼
+    包柏蓝斯基
+    茉迪
+    霍姆柏
+    札拉千科
+    安妮卡
+    柯特兹
+    玛琳
+    乔纳斯
+    阿曼斯基
+    古尔博
+    克林顿
+    泰勒波利安
+    毕约克
+    )
+
+(+@ :type rainbow-simple
+    埃利斯
+    鲍尔松
+    埃兰德
+    波汀
+    安德森
+    埃克斯壮
+    史庞柏
+    尼米南
+    蓝汀
+    叶朗森
+    费尔丁
+    瓦登榭
+    纽斯壮
+    潘格兰
+    莫天森
+    法伦
+    莫兰德
+    博舍
+    欧森
+    弗德列森
+    霍姆
+    巴克什
+    吉第
+    约翰奈斯
+    法斯特
+    艾柯林特
+    瘟疫
+    三一
+    苏珊
+    杨瑞德
+    尼西德
+    古斯塔夫森
+    艾弗森
+    麦米伦
+    )
+
+(-> :type grow :label "同性恋的非法资产代理人" 莎兰德 麦米伦)
+(-> :type grow :label "审判法官" 莎兰德 艾弗森)
+(-> :type grow :label "总检察长" 艾柯林特 古斯塔夫森)
+(-> :type grow :label "以可卡因为误导，派去刺杀布隆维斯特的杀手" 克林顿 尼西德)
+(-> :type grow :label "当时的国务秘书" 费尔丁 杨瑞德)
+(-> :type grow :label "咨询当时关于小组的问题" 布隆维斯特 杨瑞德)
+(-> :type grow :label "员工" 阿曼斯基 苏珊)
+(-> :type grow :label "米尔顿安保提供保护的人" 爱莉卡 苏珊)
+(-> :type grow :label "殴打并警告" 苏珊 弗德列森)
+(-> :type grow :label "请求监听埃克斯壮" 莎兰德 三一)
+(-> :type grow :label "在伦敦的黑客好友，擅长监听" 瘟疫 三一)
+(-> :type grow :label "好友，曾经的黑客师傅，请求帮忙联系三一和查询爱莉卡被骚扰" 莎兰德 瘟疫)
+(-> :type grow :label "床友，合作挖掘小组信息，最后交往" 布隆维斯特 费格劳拉)
+(-> :type grow :label "得力下属" 艾柯林特 费格劳拉)
+(-> :type grow :label "认识的国安局宪法保障负责人" 阿曼斯基 艾柯林特)
+(-> :type grow :label "审问出小组当前行动" 艾柯林特 瓦登榭)
+(-> :type grow :label "旧识" 阿曼斯基 包柏蓝斯基)
+(-> :type grow :label "觉得有能力的临时员工，离职前向霍姆引荐" 爱莉卡 约翰奈斯)
+(-> :type grow :label "摩根邮报新闻主编，相互敌视，爱搞事情但不搞小动作" 爱莉卡 霍姆)
+(-> :type grow :label "查出其对爱莉卡的恶行" 莎兰德 弗德列森)
+(-> :type grow :label "摩根邮报下属，不太熟悉的同学，私人物品被入室盗窃，被其爱慕和匿名骚扰" 爱莉卡 弗德列森)
+(-> :type grow :label "记者友人，拜托调查莎兰德住的医院的人和环境" 布隆维斯特 欧森)
+(-> :type grow :label "友人，拜托引荐医院护工吉第" 布隆维斯特 巴克什)
+(-> :type grow :label "认识，亲人帮助过吉第" 巴克什 吉第)
+(-> :type grow :label "付费拜托其在医院放置手机来提供网络" 布隆维斯特 吉第)
+(-> :type grow :label "调查其丑闻" 柯特兹 博舍)
+(-> :type grow :label "摩根邮报董事长，被其招揽，然后发现其丑闻，逼迫其和自己一起离职" 爱莉卡 博舍)
+(-> :type grow :label "去摩根邮报接替的那个总编辑" 爱莉卡 莫兰德)
+(-> :type grow :label "同伙，为小组开锁入室的人" 乔纳斯 法伦)
+(-> :type grow :label "小组的前二号人物，古尔博自杀后小组的实际操作人" 古尔博 克林顿)
+(-> :type grow :label "上任父亲般的监护人，出席作证莎兰德当时的实际情况" 莎兰德 潘格兰)
+(-> :type grow :label "小组在国安局的跑腿" 古尔博 莫天森)
+(-> :type grow :label "小组的老成员" 古尔博 纽斯壮)
+(-> :type grow :label "小组的现任无权领导人，否定这次的小组行动" 古尔博 瓦登榭)
+(-> :type grow :label "联手想再次让莎兰德被判失能" 泰勒波利安 埃克斯壮)
+(-> :type grow :label "偏执认为莎兰德有罪，讨厌女强人的下属" 埃克斯壮 法斯特)
+(-> :type grow :label "曾经的精神医生，敌对，举报其涉及儿童色情" 莎兰德 泰勒波利安)
+(-> :type grow :label "联手让莎兰德被判失能" 毕约克 泰勒波利安)
+(-> :type grow :label "曾经国安局一起的新人同事，一并卷入成为小组成员" 毕约克 毕尔曼)
+(-> :type grow :label "监护人，敌对" 莎兰德 毕尔曼)
+(-> :type grow :label "当时参与的新人菜鸟律师" 古尔博 毕尔曼)
+(-> :type grow :label "通知其札拉千科来瑞典并成为小组成员" 毕约克 古尔博)
+(-> :type grow :label "追踪到其和前总统的关系" 茉迪 古尔博)
+(-> :type grow :label "要求当时新任总统没法拒绝地接纳俄国间谍札拉千科" 古尔博 费尔丁)
+(-> :type grow :label "小组的新人" 古尔博 乔纳斯)
+(-> :type grow :label "小组领导人，隐藏身份，为了小组杀了札拉千科并自杀" 古尔博 札拉千科)
+(-> :type grow :label "父亲般的前老板" 莎兰德 阿曼斯基)
+(-> :type grow :label "为了莎兰德联手揭发小组" 布隆维斯特 阿曼斯基)
+(-> :type grow :label "住宅被入侵，寻求帮助" 爱莉卡 阿曼斯基)
+(-> :type grow :label "父亲旧识，前首相" 霍姆柏 费尔丁)
+(-> :type grow :label "灭口" 乔纳斯 毕约克)
+(-> :type grow :label "被其监视" 布隆维斯特 乔纳斯)
+(-> :type grow :label "小组来医院的接待人" 札拉千科 乔纳斯)
+(-> :type grow :label "好友" 尼德曼 蓝汀)
+(-> :type grow :label "硫磺湖摩托车俱乐部老大" 尼米南 蓝汀)
+(-> :type grow :label "硫磺湖摩托车俱乐部的出纳兼财务" 尼米南 叶朗森)
+(-> :type grow :label "劫财杀人" 尼德曼 叶朗森)
+(-> :type grow :label "被其杀死" 尼德曼 尼米南)
+(-> :type grow :label "打伤过他，最后告知其尼德曼位置" 莎兰德 尼米南)
+(-> :type grow :label "小组给的公民身份" 札拉千科 波汀)
+(-> :type grow :label "父亲，敌人" 莎兰德 札拉千科)
+(-> :type grow :label "国安局接待的人，小组成员" 札拉千科 毕约克)
+(-> :type grow :label "国安局接待的人，小组成员" 札拉千科 尼德曼)
+(-> :type grow :label "救治脑中枪并给予帮助和保护的医生" 莎兰德 约纳森)
+(-> :type grow :label "好友，请教治疗脑中枪" 约纳森 埃利斯)
+(-> :type grow :label "被扣押并导致尼德曼逃走的笨蛋警察" 布隆维斯特 鲍尔松)
+(-> :type grow :label "千禧年共同创建人，性伴侣" 布隆维斯特 爱莉卡)
+(-> :type grow :label "千禧年共同创建人，拜托追踪非法监视人" 布隆维斯特 柯特兹)
+(-> :type grow :label "千禧年共同创建人，查到爱莉卡去摩根报的上司有问题" 爱莉卡 柯特兹)
+(-> :type grow :label "千禧年的接替人" 爱莉卡 玛琳)
+(-> :type grow :label "臆想的情敌，帮助其找到偷窃和骚扰人" 莎兰德 爱莉卡)
+(-> :type grow :label "性伴侣，一起经历生死" 布隆维斯特 莎兰德)
+(-> :type grow :label "获取和对莎兰德进行失能判定的秘密档案" 布隆维斯特 毕约克)
+(-> :type grow :label "异母哥哥，互为敌人" 莎兰德 尼德曼)
+(-> :type grow :label "布隆维斯特请的辩护律师" 莎兰德 安妮卡)
+(-> :type grow :label "妹妹，女权律师" 布隆维斯特 安妮卡)
+(-> :type grow :label "信任的下属" 包柏蓝斯基 茉迪)
+(-> :type grow :label "追捕" 包柏蓝斯基 尼德曼)
+(-> :type grow :label "获取到前首相关于札拉千科的信息" 布隆维斯特 茉迪)
+(-> :type grow :label "同事" 茉迪 霍姆柏)
+(-> :type grow :label "下属" 包柏蓝斯基 霍姆柏)
+(-> :type grow :label "下属" 包柏蓝斯基 安德森)
+(-> :type grow :label "上司" 包柏蓝斯基 埃克斯壮)
+(-> :type grow :label "被他起诉" 莎兰德 埃克斯壮)
+(-> :type grow :label "提供尼德曼杀人所在地的警察负责人" 布隆维斯特 埃兰德)
+(-> :type grow :label "不同地区的好友同僚" 包柏蓝斯基 埃兰德)
+(-> :type grow :label "不信任的下属" 埃兰德 鲍尔松)
+(-> :type grow :label "证实莎兰德被活埋" 莎兰德 埃兰德)
+(-> :type grow :label "上司" 埃兰德 史庞柏)
+
+
+
+
+
+
+
+
+
+
+

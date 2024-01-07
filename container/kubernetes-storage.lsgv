@@ -1,0 +1,27 @@
+(! :layout "sfdp" :splines "true")
+
+(+@ :type core :color #x333333 :filled-color #x999999 :fontcolor #x333333 :shape "doublecircle"
+    (s "Storage"))
+
+(+@ :type core
+    (p "Persistent storage")
+    (st "StatefulSets"))
+
+(+@ :type feature
+    (pv "PersistentVolumes"))
+
+(+@ :type program
+    (pvc "PersistentVolumeClaims")
+    (sc "StorageClass"))
+
+(+@ :type data
+    NFS
+    EBS
+    HHD
+    SSD)
+
+(-> :type grow
+    s (p (pv (NFS EBS HHD SSD)) st))
+
+(-> :type use pvc pv)
+(-> :type make sc p)

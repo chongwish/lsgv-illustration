@@ -1,0 +1,74 @@
+(! :layout "sfdp" :splines "true" :rainbow-count 36)
+
+(+@ :shape "circle" :type rainbow-halo
+    (p-ship 船东)
+    (p-worker 搬运工人)
+    (p-qc QC)
+    (p-clerk 文员)
+    (p-factory 工厂)
+    (p-sale 销售)
+    (p-customer 客户)
+    (p-finance 财务)
+    (p-bank 银行)
+    )
+
+(+@ :shape "note" :type rainbow-halo
+    (o-preorder "预订单")
+    (o-invoice "合同/发票")
+    (o-checklist "清单")
+    (o-shipment "运货单")
+    (o-bill "账单")
+    )
+
+(+@ :shape "house" :type rainbow-halo
+    (p-storage "仓库")
+    (sh-storage "船运仓库")
+    (sh-ship "船")
+    (sh-box "集装箱/柜")
+    )
+
+(+@ :shape "triangle" :type rainbow-halo
+    (t-toy "玩具"))
+
+(+@ :shape "rectangle" :type rainbow-halo
+    (t-toy-box "玩具装箱")
+    (t-toy-container "玩具货柜"))
+
+(+@ :shape "ellipse" :type rainbow-halo
+    (t-toy-info "玩具信息"))
+
+(-> :type make p-clerk o-checklist)
+(-> :type make p-customer o-preorder)
+(-> :type make :label "证书，侵权，货期和金额等" o-preorder o-invoice)
+(-> :type make p-ship o-shipment)
+(-> :type make p-bank o-bill)
+(-> :type make p-sale o-invoice)
+(-> :type make t-toy o-preorder)
+(-> :type make t-toy-box t-toy-container)
+
+(-> :type use p-sale o-preorder)
+(-> :type use p-qc o-checklist)
+(-> :type use :label "收到客户银行的转账" p-finance o-bill)
+(-> :type use :label "装箱派送" p-factory p-storage)
+(-> :type use :label "清点" p-qc t-toy-box)
+(-> :type use p-worker t-toy)
+(-> :type use p-worker (sh-ship sh-storage sh-box p-storage))
+(-> :type use :label "用于给客户提货" p-sale o-shipment)
+(-> :type use p-customer t-toy-info)
+
+(-> :type grow p-ship (sh-storage (t-toy-box) sh-ship (sh-box)))
+(-> :type grow p-factory t-toy)
+(-> :type grow p-storage t-toy-box)
+(-> :type grow sh-box t-toy-container)
+(-> :type grow p-storage p-qc)
+(-> :type grow t-toy (t-toy-info t-toy-box))
+(-> :type grow p-customer t-toy-box)
+
+(-> :type has :label "给出需要产商的玩具" p-sale p-clerk)
+(-> :type has :label "联系厂商可以获取的玩具" p-clerk p-factory)
+(-> :type has :label "提示到账" p-finance p-sale)
+(-> :type has :label "结算" p-finance p-factory)
+(-> :type has :label "对接" p-sale p-customer)
+(-> :type has :lalel "CL信用证贷款/TT电汇" p-customer p-bank)
+
+

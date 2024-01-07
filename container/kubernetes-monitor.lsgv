@@ -1,0 +1,16 @@
+(! :layout "sfdp" :splines "true")
+
+(+@ :type core :color #x333333 :filled-color #x999999 :fontcolor #x333333 :shape "doublecircle"
+    (m "Monitor"))
+
+(+@ :type component
+    cAdvisor
+    Heapster
+    InfluxDB
+    Sysdig)
+
+(+@ :type note
+    (n "Built-in"))
+
+(-> :type grow m (cAdvisor Heapster InfluxDB Sysdig))
+(-> :type mean (cAdvisor Heapster InfluxDB) n)

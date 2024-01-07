@@ -1,0 +1,82 @@
+(! :layout "dot" :splines "polyline")
+
+(+@ :type machine
+    (svm "Substrate VM"))
+
+(+@ :type file
+    (app "Application Code")
+    (lib "Library Code")
+    (jdk "JDK Code")
+    (build-file "native-image.properties")
+    (ref-file "reflect-config.json")
+    (jni-file "jni-config.json")
+    (pxy-file "proxy-config.json")
+    (res-file "resource-config.json"))
+
+(+@ :type component
+    (c-ha "Heap Allocator")
+    (c-rm "Region Manager")
+    (h-gc "Garbage Collected")
+    (h-hrs "Heap Region Stack")
+    (nia "Native Image Agent"))
+
+(+@ :type folder
+    (conf-path "META-INF/native-image"))
+
+(+@ :type program
+    (ni "native-image")
+    (bin "Executable\nBinary"))
+
+(+@ :type feature
+    (analyze "Points-to\nAnalysis")
+    (init "Initialize")
+    (region "Region Analysis\nHeap Snapshot")
+    (gc "Garbage\nCollector")
+    (gc-ce "Serial for CE")
+    (gc-ee "G1 for EE")
+    (conf "Configuration")
+    (build "Building")
+    (b-sni "Static\nNative Image")
+    (b-nsl "Native\nShared Library")
+    (analyze-rc "Reachable\nCode")
+    (region-m "Region\nMapping")
+    (region-ee "Region\nEntry/Exit"))
+
+(-> :type use :constraint "true" ni (app lib jdk))
+(-> :type make (app lib jdk) bin)
+
+(-> :type has
+    ni (conf analyze init region build (b-nsl b-sni)))
+
+(-> :type has :constraint false
+    conf (build-file conf-path nia))
+
+(-> :type make ni bin)
+
+(-> :type use
+    analyze (init (region (analyze))))
+
+(-> :type make
+    nia (jni-file pxy-file ref-file res-file))
+
+(-> :type has
+    conf-path (jni-file pxy-file ref-file res-file))
+
+(-> :type make analyze analyze-rc)
+
+(-> :type make region (region-m region-ee))
+
+(-> :type has bin (gc (gc-ee gc-ce) analyze-rc region-m region-ee svm (c-rm c-ha)))
+
+(-> :type use c-rm h-gc)
+(-> :type use :constraint "false" h-gc region-m)
+(-> :type use c-ha h-hrs)
+(-> :type use :constraint "true" h-hrs region-ee)
+
+(+@ :type none parent)
+(-> :type none parent (ni bin))
+(=@ parent app lib jdk)
+
+(=@ region analyze init conf build)
+(=@ region-m region-ee analyze-rc svm)
+(=@ conf-path c-ha nia build-file)

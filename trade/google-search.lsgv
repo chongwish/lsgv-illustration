@@ -1,0 +1,29 @@
+(! :layout "sfdp" :splines "true" :rainbow-count 36)
+
+(+@ :type rainbow-halo :shape "doublecircle" SEO)
+
+(+@ :type rainbow-halo
+    外链多
+    大站
+    优质站点
+    速度快
+    结构好
+    网站地图
+    静态页面
+    关键字
+    (k-title 标题)
+    (k-meta 元描述)
+    (k-content 内容)
+    渠道推广
+    (r-click 点击)
+    (r-flow 流量)
+    内容查重低
+    谷歌广告
+    谷歌开发工具优化
+    HTTPS
+    禁止反爬虫
+    手机端
+    电脑端
+    )
+
+(-> :type grow SEO (外链多 (优质站点 大站) 速度快 结构好 (网站地图 手机端 电脑端) 静态页面 关键字 (k-title k-meta k-content) HTTPS 渠道推广 (r-flow r-click) 内容查重低 谷歌开发工具优化 谷歌广告 禁止反爬虫))

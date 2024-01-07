@@ -1,0 +1,42 @@
+(! :layout "sfdp" :splines "polyline")
+
+(+@ :type core :color #x333333 :filled-color #x999999 :fontcolor #x333333 :shape "doublecircle"
+    (kc "Key Concepts"))
+
+
+(+@ :type core
+    (c "cgroups")
+    (n "Namespaces")
+    (fs "Union filesystems")
+    )
+
+(+@ :type component
+    (c-m "Memory")
+    (c-b "Blkio")
+    (c-c "CPU")
+    (c-f "Freezer")
+    (c-cs "CPUset")
+    (c-n "Net_cls/net_prio")
+    (c-d "Devices")
+    (n-p "pid")
+    (n-n "net")
+    (n-i "ipc")
+    (n-m "mnt")
+    (n-u "uts")
+    (n-ur "user")
+    )
+
+(+@ :type note
+    (c-note "limit resources")
+    (n-note "isolation interaction")
+    (fs-note "copy-on-write")
+    )
+
+(-> :type grow
+    kc (c (c-m c-b c-c c-f c-cs c-n c-d)
+        n (n-p n-n n-i n-m n-u n-ur)
+        fs))
+
+(-> :type mean c c-note)
+(-> :type mean n n-note)
+(-> :type mean fs fs-note)

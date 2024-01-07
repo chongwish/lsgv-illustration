@@ -1,0 +1,94 @@
+(! :layout "fdp" :sep "1" :splines "polyline" :rainbow-count 12)
+
+(+@ :type rainbow-halo :shape "doublecircle"
+    费克里
+    阿米莉娅
+    玛雅)
+
+(+@ :type rainbow-halo
+    妮可
+    兰比亚斯
+    丹尼尔
+    伊斯梅)
+
+(+@ :type rainbow-simple
+    莫莉
+    罗森
+    坎伯巴奇
+    玛丽安
+    詹妮
+    弗里德曼
+    玛丽亚
+    罗西
+    奥伦斯卡
+    布雷特
+    洛曼
+    利昂诺拉
+    雅尼纳
+    巴尔博尼
+    A.J)
+
+(+@ :type rainbow-halo :shape "house"
+    小岛书店)
+
+(+@ :type rainbow-halo :shape "hexagon"
+    帖木儿 迟暮花开 海滩一日)
+
+(-> :type grow :label "名字" A.J 费克里)
+
+(-> :type grow :label "语文老师" 玛雅 巴尔博尼)
+(-> :type grow :label "欣赏" 巴尔博尼 海滩一日)
+(-> :type grow :label "感触" 费克里 海滩一日)
+(-> :type grow :label "文章" 玛雅 海滩一日)
+(-> :type grow :label "残留记忆" 海滩一日 玛丽安)
+
+(-> :type grow :label "勾搭" 丹尼尔 雅尼纳)
+(-> :type grow :label "伴娘" 阿米莉娅 雅尼纳)
+
+(-> :type grow :label "捐赠活动" 费克里 奥伦斯卡)
+(-> :type grow :label "知晓" 费克里 布雷特)
+(-> :type grow :label "知道真相后诧异" 阿米莉娅 利昂诺拉)
+(-> :type grow :label "请求当假作者" 利昂诺拉 弗里德曼)
+(-> :type grow :label "作者活动" 利昂诺拉 小岛书店)
+(-> :type grow :label "作者" 迟暮花开 利昂诺拉)
+(-> :type grow :label "嫌弃" 洛曼 费克里)
+(-> :type grow :label "妈妈" 阿米莉娅 洛曼)
+(-> :type grow :label "前男友" 阿米莉娅 布雷特)
+(-> :type grow :label "舞蹈老师" 玛雅 奥伦斯卡)
+(-> :type grow :label "性伴侣" 费克里 罗西)
+(-> :type grow :label "约会对象" 费克里 玛丽亚)
+(-> :type grow :label "请来活动" 费克里 弗里德曼)
+(-> :type grow :label "假作者，是个喜剧演员" 迟暮花开 弗里德曼)
+(-> :type grow :label "喜欢" 费克里 迟暮花开)
+(-> :type grow :label "喜欢" 阿米莉娅 迟暮花开)
+
+(-> :type grow :label "遗弃" 玛雅 小岛书店)
+(-> :type grow :label "姨母" 玛雅 伊斯梅)
+(-> :type grow :label "养女" 阿米莉娅 玛雅)
+(-> :type grow :label "查询身世" 兰比亚斯 玛雅)
+(-> :type grow :label "爱慕，后在一起" 兰比亚斯 伊斯梅)
+(-> :type grow :label "自杀，托付女儿" 玛丽安 小岛书店)
+(-> :type grow :label "偷取，想给玛丽安" 伊斯梅 帖木儿)
+(-> :type grow :label "大姨子" 费克里 伊斯梅)
+(-> :type grow :label "丈夫，知道其风流，后以外车祸害死丈夫" 伊斯梅 丹尼尔)
+(-> :type grow :label "调查有无资格领养" 詹妮 费克里)
+(-> :type grow :label "养女" 费克里 玛雅)
+(-> :type grow :label "女儿" 玛丽安 玛雅)
+(-> :type grow :label "女儿，很喜欢，但不知道" 丹尼尔 玛雅)
+(-> :type grow :label "爱慕，发生关系" 玛丽安 丹尼尔)
+(-> :type grow :label "抱怨" 坎伯巴奇 费克里)
+
+(-> :type grow :label "认识" 罗森 妮可)
+(-> :type grow :label "女儿" 罗森 莫莉)
+(-> :type grow :label "医生" 费克里 罗森)
+(-> :type grow :label "老板" 莫莉 费克里)
+(-> :type grow :label "连襟" 费克里 丹尼尔)
+
+(-> :type grow :label "查找后，劝伊斯梅归还" 兰比亚斯 帖木儿)
+(-> :type grow :label "警长朋友" 费克里 兰比亚斯)
+(-> :type grow :label "拥有，丢失" 费克里 帖木儿)
+(-> :type grow :label "已故妻子" 费克里 妮可)
+(-> :type grow :label "创建" 妮可 小岛书店)
+(-> :type grow :label "推销员" 阿米莉娅 小岛书店)
+(-> :type grow :label "店长" 小岛书店 费克里)
+(-> :type grow :label "结婚" 阿米莉娅 费克里)

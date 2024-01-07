@@ -1,0 +1,43 @@
+(! :layout "sfdp" :rainbow-color #x900000 :rainbow-count 24)
+
+(+@ :type rainbow-halo :shape "circle"
+    (jvm "JVM"))
+
+(+@ :type rainbow-halo :shape "egg"
+    (ss-cl "Class Loader\nSubsystem")
+    (ss-ee "Execution Engine\nSubsystem")
+    (ss-mm "Memory\nSubsystem")
+    (ss-na "Native\nSubsystem"))
+
+(+@ :type rainbow-halo
+    (cl-cp "Class Path")
+    (cl-ld "Class Loader")
+    (ee-ipt "Bytecode Interpreter")
+    (ee-cpl "JIT Compiler")
+    (ee-gc "Garbage Collector")
+    (mm-sh "JVM Level")
+    (mm-ex "Thread Level"))
+
+(+@ :type rainbow-halo
+    (cl-ld-1 "Loaders")
+    (cl-ld-2 "Linking")
+    (cl-ld-3 "Init")
+    (ee-cpl-1 "C1/Client")
+    (ee-cpl-2 "C2/Server")
+    (mm-sh-m "Method")
+    (mm-sh-h "Heap")
+    (mm-ex-s "Stack")
+    (mm-ex-r "Registers")
+    (mm-ex-n "Native Method Stack"))
+
+(-> :type grow
+    jvm (ss-cl ss-ee ss-mm ss-na))
+
+(-> :type grow
+    ss-cl (cl-cp cl-ld (cl-ld-1 cl-ld-2 cl-ld-3)))
+
+(-> :type grow
+    ss-ee (ee-ipt ee-cpl (ee-cpl-1 ee-cpl-2) ee-gc))
+
+(-> :type grow
+    ss-mm (mm-sh (mm-sh-m mm-sh-h) mm-ex (mm-ex-s mm-ex-r mm-ex-n)))

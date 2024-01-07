@@ -1,0 +1,85 @@
+(! :layout "dot" :splines "true" :rankdir "LR" :rainbow-count 64)
+
+(+@ :type rainbow-halo
+    )
+
+(+@ :type rainbow-halo
+    (m 管理)
+    (m-doc 资料)
+    (m-doc-product 产品)
+    (m-factory 工厂)
+    (m-site 网站)
+    (m-platform 平台)
+    (m-customer 客户)
+    (m-trans 运输)
+    (m-storage 仓储)
+    (st-sample 样品)
+    (st-sample-self 展柜)
+    (st-sample-show 托管展厅)
+    (st-product 客户订货)
+    (st-product-store 货物存储)
+    (m-order 订单)
+    (m-finance 财务)
+
+    (fp 工厂渠道)
+    (fp-recom 推广)
+    (fp-site 网站)
+    (fp-ol 线上展厅)
+    (fp-dl 线下展厅)
+    (fp-show 展会)
+
+    (cp 客户渠道)
+    (cp-search 线上搜索)
+    (cp-search-engine 搜索引擎)
+    (cp-search-facebook Facebook联系人)
+    (cp-search-linkedin Linkedin联系人)
+    (cp-search-tiktok Tiktok联系人)
+    (cp-search-tiktok-note "注意网络环境")
+    (cp-show 展会)
+    (cp-show-info 展会客户资料)
+    (cp-show-contact 展会联系客户)
+    (cp-old 老客户)
+    (cp-platform 平台)
+    (cp-platform-huanqiu 环球资源)
+
+    (op 运营)
+    (op-demand 需求)
+    (op-demand-market 市场需求)
+    (op-demand-custom 客户需求)
+    (op-demand-supply 供应需求)
+    (op-policy 策略)
+    (op-policy-product 产品)
+    (op-policy-product-rank 竞价)
+    (op-policy-product-bind 绑定)
+    (op-policy-product-recom 推荐)
+    (op-policy-product-prom 推广)
+    (op-policy-flow 流量)
+    (op-policy-act 活动)
+    )
+
+(+@ :type none m-factory-none op-none-1 op-none-2 op-none-3)
+
+(-> :type none op-none-1 op)
+(=@ op-none-1 op-policy op-demand)
+(-> :type none op-none-2 op-none-1)
+(=@ op-none-2 op-demand-supply op-demand-custom op-demand-market op-policy-act op-policy-flow op-policy-product)
+(-> :type none op-none-3 op-none-2)
+(=@ op-none-3 op-policy-product-rank op-policy-product-prom op-policy-product-recom op-policy-product-bind)
+(-> :type none op-policy m-finance)
+
+(-> :type grow m (m-doc (m-doc-product) m-factory m-site m-platform m-customer m-trans m-storage (st-sample (st-sample-self st-sample-show) st-product (st-product-store)) m-order m-finance))
+
+(-> :type grow fp (fp-recom fp-site fp-ol fp-dl fp-show))
+(-> :type make fp m-factory)
+
+(-> :type grow cp (cp-search (cp-search-engine cp-search-facebook cp-search-linkedin cp-search-tiktok (cp-search-tiktok-note)) cp-show (cp-show-contact cp-show-info) cp-old cp-platform (cp-platform-huanqiu)))
+(-> :type use m-customer cp)
+
+(-> :type grow :constraint false op (op-demand (op-demand-supply op-demand-market op-demand-custom) op-policy (op-policy-product (op-policy-product-rank op-policy-product-bind op-policy-product-recom op-policy-product-prom) op-policy-flow op-policy-act)))
+
+(-> :type use op m)
+
+(-> :type none m-factory m-factory-none)
+(=@ m-factory-none fp)
+
+

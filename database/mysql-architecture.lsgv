@@ -1,0 +1,52 @@
+(! :layout "dot" :splines "true")
+
+(+@ :type program
+    (shell "MySQL Shell"))
+
+(+@ :type file
+    (connector "MySQL Connectors\n(Application)\nC, PHP, JDBC, Python")
+    (sql "eg: SELECT * ...")
+    (fl "File & Logs"))
+
+(+@ :type data
+    (fs "File System"))
+
+(+@ :type machine
+    (mysqld "MySQL Server(mysqld)"))
+
+(+@ :type feature
+    (si "SQL Interface\nDML,DML")
+    (nsi "NoSQL Interface\nCURD Oprations")
+    (cb "Caches & Buffers")
+    (q "Parser")
+    (op "Optimizer")
+    (se "Storage Engines"))
+
+(+@ :type component
+    InnoDB
+    MyISAM
+    NDB
+    Memory)
+
+(+@ :type core
+    (query "pre query")
+    parse
+    optimze
+    fetch)
+
+(-> :type use (shell connector) mysqld)
+
+(-> :type grow mysqld (si nsi cb q op se (InnoDB MyISAM NDB Memory) fl))
+
+(-> :type use fl fs)
+
+(-> :type use sql (query (parse (optimze (fetch)))))
+
+(-> :type make cb query)
+(-> :type make q parse)
+(-> :type make op optimze)
+(-> :type make se fetch)
+(-> :type none fs sql)
+
+(=@ cb q op se)
+(=@ sql query parse optimze fetch)

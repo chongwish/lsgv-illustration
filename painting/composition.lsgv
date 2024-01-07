@@ -1,0 +1,25 @@
+(! :layout "dot" :splines "true")
+
+(+@ :type rainbow-halo :shape "doublecircle"
+    (c "构图"))
+
+(+@ :type rainbow-halo :shape "circle"
+    (chinese "中国传统画论"))
+
+(+@ :type rainbow-simple
+    (ch-1 "置陈步势")
+    (ch-2 "经营位置")
+    (ch-3 "布局")
+    (ch-4 "结构")
+    (ch-5 "格局")
+    (ch-6 "章法")
+)
+
+(-> :type has c chinese)
+
+(-> :type mean :label "安排表现力的趋向" chinese ch-1)
+(-> :type mean :label "组织安排形象位置" chinese ch-2)
+(-> :type mean :label "组织全局总体关系的层次" chinese ch-3)
+(-> :type mean :label "组织配合各个关系" chinese ch-4)
+(-> :type mean :label "整体样式规模和场面" chinese ch-5)
+(-> :type mean :label "构成的合理技法" chinese ch-6)

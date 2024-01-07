@@ -1,0 +1,114 @@
+(! :layout "fdp" :sep "0.9" :splines "true" :rainbow-count 12)
+
+(+@ :type rainbow-halo :shape "doublecircle"
+    布隆维斯特
+    莎兰德)
+
+(+@ :type rainbow-halo
+    毕尔曼
+    玛琳
+    阿曼斯基
+    达格
+    米莉安
+    罗贝多
+    蓝汀
+    札拉千科
+    尼德曼
+    包柏蓝斯基
+    )
+
+(+@ :type rainbow-simple
+    爱莉卡
+    毕约克
+    艾拉
+    福布斯
+    毕波
+    瘟疫
+    杰拉尔丁
+    布兰
+    麦米伦
+    卡米拉
+    里斯特
+    米亚
+    海莉
+    潘格兰
+    席瓦南丹
+    安妮卡
+    埃克斯壮
+    法斯特
+    安德森
+    霍姆柏
+    茉迪
+    尼克拉森
+    弗雷克伦
+    泰勒波利安
+    柯特兹
+    邪恶手指
+    奈瑟
+    桑斯壮
+    尼米南
+    )
+
+(-> :type grow :label "要挟办事的嫖客" 札拉千科 桑斯壮)
+(-> :type grow :label "严刑逼供" 莎兰德 桑斯壮)
+(-> :type grow :label "拳王，曾经的拳击老师" 莎兰德 罗贝多)
+(-> :type grow :label "在金发巨人手中救下" 罗贝多 米莉安)
+(-> :type grow :label "和米莉安一起死斗" 罗贝多 尼德曼)
+(-> :type grow :label "旧识" 罗贝多 爱莉卡)
+(-> :type grow :label "伪装" 莎兰德 奈瑟)
+(-> :type grow :label "交好的乐队" 莎兰德 邪恶手指)
+(-> :type grow :label "曾经的主任医师，精神专家，虐待过莎兰德，主导莎兰德失能" 莎兰德 泰勒波利安)
+(-> :type grow :label "举报其偷窃行为" 莎兰德 贺斯壮)
+(-> :type grow :label "员工，泄漏警方信息给记者" 阿曼斯基 贺斯壮)
+(-> :type grow :label "员工，派去帮警察查明杀人事件" 阿曼斯基 波曼)
+(-> :type grow :label "员工，派去帮警察查明杀人事件" 阿曼斯基 弗雷克伦)
+(-> :type grow :label "其他报社朋友" 布隆维斯特 尼克拉森)
+(-> :type grow :label "不太了解的下属" 包柏蓝斯基 安德森)
+(-> :type grow :label "下属" 包柏蓝斯基 霍姆柏)
+(-> :type grow :label "信任的女下属" 包柏蓝斯基 茉迪)
+(-> :type grow :label "仇视女强人的下属" 包柏蓝斯基 法斯特)
+(-> :type grow :label "调查杀人案件的负责人" 包柏蓝斯基 莎兰德)
+(-> :type grow :label "上司" 包柏蓝斯基 埃克斯壮)
+(-> :type grow :label "入侵电脑" 莎兰德 埃克斯壮)
+(-> :type grow :label "需要调查但无法联系到的人" 达格 毕约克)
+(-> :type grow :label "设计调查的人" 布隆维斯特 毕约克)
+(-> :type grow :label "妹妹" 布隆维斯特 安妮卡)
+(-> :type grow :label "国安局接待的新人" 札拉千科 毕约克)
+(-> :type grow :label "照顾的医生" 潘格兰 席瓦南丹)
+(-> :type grow :label "抓走，差点打死" 尼德曼 米莉安)
+(-> :type grow :label "合作人" 札拉千科 蓝汀)
+(-> :type grow :label "制服" 莎兰德 尼米南)
+(-> :type grow :label "硫磺湖摩托车俱乐部成员" 蓝汀 尼米南)
+(-> :type grow :label "合作人，硫磺湖摩托车俱乐部会长" 尼德曼 蓝汀)
+(-> :type grow :label "异母哥哥，金发巨人，怕黑，追捕和活埋莎兰德" 莎兰德 尼德曼)
+(-> :type grow :label "虐待母亲的父亲，死敌，前苏联间谍投靠并受到被瑞典保护，想杀死莎兰德" 莎兰德 札拉千科)
+(-> :type grow :label "前国安局接待的新人" 札拉千科 毕尔曼)
+(-> :type grow :label "好友，证明不是凶手" 布隆维斯特 莎兰德)
+(-> :type grow :label "看不起，误以为是破绽，杀害" 尼德曼 毕尔曼)
+(-> :type grow :label "度假小岛的服务员" 莎兰德 艾拉)
+(-> :type grow :label "杀死，怕札拉的事情被揭发" 尼德曼 米亚)
+(-> :type grow :label "杀死，怕札拉的事情被揭发" 尼德曼 达格)
+(-> :type grow :label "调查札拉关于性交易的事情" 达格 札拉千科)
+(-> :type grow :label "好奇，调查，后打晕他救人" 莎兰德 福布斯)
+(-> :type grow :label "想谋杀的妻子" 福布斯 杰拉尔丁)
+(-> :type grow :label "暴风雨天在海滩上救了她" 莎兰德 杰拉尔丁)
+(-> :type grow :label "被指定的莎兰德的监护人，想报复莎兰德" 莎兰德 毕尔曼)
+(-> :type grow :label "监护人，关系亲密" 莎兰德 潘格兰)
+(-> :type grow :label "曾经老板，帮助调查莎兰德不是凶手" 莎兰德 阿曼斯基)
+(-> :type grow :label "旧识" 阿曼斯基 潘格兰)
+(-> :type grow :label "黑客伙伴" 莎兰德 瘟疫)
+(-> :type grow :label "介绍给莎兰德的黑客" 瘟疫 毕波)
+(-> :type grow :label "提供福布斯的信息" 毕波 莎兰德)
+(-> :type grow :label "在小岛认识的未成年黑人性伴侣" 莎兰德 布兰)
+(-> :type grow :label "在直布罗陀的律师" 莎兰德 麦米伦)
+(-> :type grow :label "姐妹，感情不好" 莎兰德 卡米拉)
+(-> :type grow :label "编辑秘书" 布隆维斯特 玛琳)
+(-> :type grow :label "对接人" 玛琳 达格)
+(-> :type grow :label "合伙人" 布隆维斯特 里斯特)
+(-> :type grow :label "合伙人，性伴侣" 布隆维斯特 爱莉卡)
+(-> :type grow :label "董事成员，性伴侣" 布隆维斯特 海莉)
+(-> :type grow :label "朋友兼员工，要揭社会的发性交易犯罪" 布隆维斯特 达格)
+(-> :type grow :label "员工" 布隆维斯特 柯特兹)
+(-> :type grow :label "拜访过，被怀疑是杀害达格夫妇的凶手" 莎兰德 达格)
+(-> :type grow :label "妻子，研究性犯罪的女博士" 达格 米亚)
+(-> :type grow :label "同性恋性伴侣" 莎兰德 米莉安)

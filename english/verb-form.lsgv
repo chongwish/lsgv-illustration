@@ -1,0 +1,29 @@
+(! :layout "dot" :splines "true" :rankdir "LR" :rainbow-count 18)
+
+(+@ :type core :shape "doublecircle" :color #x000000 :fontcolor #xFFFFFF :filled-color #x7F7F7F
+    (form "Verb Forms"))
+
+(+@ :type rainbow-halo
+    (base "Base Form")
+    (infinitive "Infinitive")
+    (future "Future Tense")
+    (imperative "Imperatives")
+    (verb-comp "Verb Complements")
+    (present-tense "Present Tense")
+    (present-tense-1 "+s")
+    (past-tense "Past Tense")
+    (past-tense-1 "+d/ed")
+    (past-tense-2 "-y+ied")
+    (present-participle "Present Participle")
+    (past-participle "Past Participle")
+    (modal "Modal Auxiliary Verbs")
+    (modal-1 "Only be used in the present and past tense")
+    (modal-2 "Derived from past tense"))
+
+(-> :type grow
+    form (base (infinitive future imperative verb-comp)
+          present-tense (present-tense-1)
+          past-tense (past-tense-1 past-tense-2)
+          present-participle
+          past-participle
+          modal (modal-1 modal-2)))

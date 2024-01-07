@@ -1,0 +1,69 @@
+(! :layout "dot" :splines "true")
+
+(+@ :type file
+    (java "Java")
+    (cpp "C++"))
+
+(+@ :type function (jvmti "JVM\nCompiler\nInterface"))
+
+(+@ :type core
+    (jit "JIT")
+    (aot "AOT"))
+
+(+@ :type component
+    (gjit "Graal JIT")
+    (ljit "Legacy JIT")
+    (cp-th-mic "Method\nInvocation\nCounter")
+    (cp-th-lc "Loop\nCounter"))
+
+(+@ :type feature
+    (op-pg "Profile-guided\nOptimization")
+    (jvm-bip "JVM Built-in\nProfiler")
+    (jvm-mme "Mixed Mode Execution")
+    (mme-d "De-optimize")
+    (mme-o "Optimize")
+    (cp-th "Compilation\nThreshold")
+    (osr "On-Stack\nReplacement")
+    (tc "Tiered\nCompilation")
+    (op-in "Monomorphic\nBimorphicand\nMegamorphic\nDispatch")
+    (op-dc "Dead Code\nElimination")
+    (op-lo-ur "Loop Optimization\nLoop Unrolling")
+    (op-ea "Escape Analysis")
+    (op-ea-le "Lock Elision")
+    (op-ea-sr "Scalar Replacement")
+    (do-ne "Not Entrant\nCode")
+    (do-zb "Zombie Code"))
+
+(+@ :type data
+    (cc "Code Cache")
+    (cc-nnm "Non-native\nMethod")
+    (cc-pc "Profiled\nCode")
+    (cc-npc "Non-profiled\nCode")
+    (tc-l0 "L0\nInterpreted\nCode")
+    (tc-l1 "L1\nSimple C1\nCompiled\nCode")
+    (tc-l2 "L2\nLimited C1\nompiled\nCode")
+    (tc-l3 "L3\nFull C1\nCompiled\nCode")
+    (tc-l4 "L4\nC2\nCompiled\nCode"))
+
+(-> :type has
+    jit (op-pg (jvm-bip (jvm-mme (mme-d (do-ne do-zb) mme-o (op-in op-dc op-lo-ur op-ea (op-ea-le op-ea-sr)))))
+         cp-th (cp-th-mic cp-th-lc)
+         osr
+         tc
+         gjit
+         ljit))
+
+(-> :type use gjit (java (jvmti)))
+(-> :type use ljit (cpp))
+
+(-> :type make
+    cc (cc-nnm cc-pc cc-npc))
+
+(-> :type make
+    tc (tc-l0 (cc) tc-l1 (cc) tc-l2 (cc) tc-l3 (cc) tc-l4 (cc)))
+
+(-> :type use :label "replace c2" gjit ljit)
+
+(-> :type has aot gjit)
+
+(=@ ljit gjit)

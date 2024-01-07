@@ -1,0 +1,66 @@
+(! :layout "sfdp" :splines "true")
+
+(+@ :type core :color #x333333 :filled-color #x999999 :fontcolor #x333333 :shape "doublecircle"
+    (n "Network"))
+
+(+@ :type core
+    (com "Communication")
+    (p "Plugin")
+    (s "Service")
+    (r "Resource")
+    (d "DNS")
+    )
+
+(+@ :type component
+    (c-p "Pause Container")
+    (k-p "kube-proxy")
+    (ingress "Ingress")
+    CoreDNS
+    kube-dns
+    )
+
+(+@ :type feature
+    (com-c-c "container-to-container")
+    (com-p-p "pod-to-pod")
+    (com-p-s "pod-to-service")
+    (com-e-s "external-to-service")
+    (m-u "userspace")
+    (m-i "iptables")
+    (cus "Custom addressing")
+    (cip "clusterip")
+    )
+
+(+@ :type function
+    Weave
+    Flannel
+    Calico
+    Canal
+    Kube-router
+    )
+
+(+@ :type note
+    (w-note "An overlay network for Docker containers")
+    (f-note "Comes from CoreOS and is an etcd-backed overlay")
+    (c-note "A layer 3-based networking model\nthat uses the built-in routing functions\nof the Linux kernel")
+    (ca-note "merges both Calico for the network policy and\nFlannel for the overlay into one solution")
+    (kr-note "Based on the Linux LVS/IPVS kernel load balancing technologies as proxy")
+    )
+
+(-> :type grow
+    n (com (com-c-c com-p-p com-p-s com-e-s) p (Weave Flannel Calico Canal Kube-router) s (k-p (m-u m-i)) r (ingress) d (CoreDNS kube-dns) cus))
+(-> :type grow :label "not assign an IP address and instead only assign A records in DNS for each of the pods" cus cip)
+
+(-> :type has :label "container placeholder" com-p-p c-p)
+
+(-> :type use :label "pod level, no port mapping" com-c-c com-p-p)
+(-> :type use s d)
+
+(-> :type make :label "random port" k-p com-p-s)
+(-> :type make :label "overlay" p com)
+(-> :type make :label "proxying and load balancing to a back service" ingress com-e-s)
+
+(-> :type mean Weave w-note)
+(-> :type mean Flannel f-note)
+(-> :type mean Calico c-note)
+(-> :type mean Canal ca-note)
+(-> :type mean Kube-router kr-note)

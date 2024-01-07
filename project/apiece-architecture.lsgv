@@ -1,0 +1,99 @@
+(! :layout "dot" :splines "ortho")
+
+(+@ :type note
+    (reason-1 "Make a chess game")
+    (reason-2 "Understand graalvm")
+    (reason-3 "Combine multiple languages"))
+
+(+@ :type machine
+    graalvm native-image graal-python graal-nodejs)
+
+(+@ :type core
+    apiece lanterna jme3 blessed)
+
+(+@ :type component
+    game-interface chinese-legacy chinese-dark
+    (ai-chinese-legacy-base "base") (ai-chinese-legacy-deep "deep")
+    server
+    (client-chinese-legacy-text "chinese-legacy-text") (client-chinese-legacy-pokemon "chinese-legacy-pokemon")
+    (client-chinese-legacy-console "chinese-legacy-console") (client-chinese-legacy-commandline "chinese-legacy-commandline")
+    translator
+    stuff)
+
+(+@ :type folder
+    client
+    game rule
+    bot
+    (ai-chinese-legacy "chinese-legacy")
+    virtual product)
+
+(+@ :type feature
+    board piece (piece-color "color") (piece-type "type")
+    (product-chinese "chinese-chess") (product-chess "chess") (product-go "go")
+    position move
+    player layout round memory record replay
+    check-rule move-rule win-rule think substitute
+    chinese-piece-move (chinese-game-win "game-win") chinese-piece-layout
+    (a-c-l-e "evaluation") (a-c-l-q "quantization") (a-c-l-s "search")
+    (a-c-l-s-m "minimax-search") (a-c-l-s-p "pruning") (a-c-l-s-p-a "alphabeta-pruning")
+    translate local pgn communicate data-format)
+
+(+@ :type test
+    (stuff-test "unit-test")
+    (chinese-legacy-test "unit-test")
+    (a-c-l-b-t "unit-test")
+    (translator-test "unit-test"))
+
+(+@ :type file
+    (a-c-l-d-py "python")
+    (c-c-l-c-nodejs "nodejs"))
+
+(-> :type mean apiece (reason-1 reason-2 reason-3))
+
+(-> :type has
+    graalvm (native-image graal-nodejs graal-python))
+
+(-> :type has
+    apiece (server
+            client (client-chinese-legacy-pokemon client-chinese-legacy-text client-chinese-legacy-commandline client-chinese-legacy-console (c-c-l-c-nodejs))
+            translator (translate (local pgn) communicate (data-format) translator-test)
+            bot (ai-chinese-legacy (ai-chinese-legacy-deep (a-c-l-d-py) ai-chinese-legacy-base (a-c-l-b-t a-c-l-e a-c-l-q a-c-l-s (a-c-l-s-m a-c-l-s-p (a-c-l-s-p-a)))))
+            game (game-interface (layout memory (record replay) rule (check-rule move-rule win-rule) player (think substitute) round) chinese-legacy (chinese-legacy-test chinese-piece-layout chinese-game-win chinese-piece-move) chinese-dark)
+            stuff (stuff-test board piece (piece-color piece-type) virtual (position move) product (product-chinese product-chess product-go))))
+
+(-> :type use :constraint "false" chinese-legacy (ai-chinese-legacy (stuff game-interface)))
+(-> :type use :constraint "true" (chinese-legacy chinese-dark) game-interface)
+(-> :type use :constraint "true" game-interface stuff)
+(-> :type use :constraint "true" (server client) (translator stuff game bot))
+(-> :type use :constraint "true" translator stuff)
+
+(-> :type use client-chinese-legacy-text lanterna)
+(-> :type use client-chinese-legacy-pokemon jme3)
+(-> :type use client-chinese-legacy-console blessed)
+
+(-> :type use native-image (client-chinese-legacy-commandline client-chinese-legacy-text))
+(-> :type use graal-python ai-chinese-legacy-deep)
+(-> :type use graal-nodejs client-chinese-legacy-console)
+(-> :type use graalvm (server client-chinese-legacy-pokemon))
+
+(=@ native-image graal-nodejs graal-python)
+
+(+@ :type none
+    parent
+    child-1
+    child-2
+    child-3
+    child-4
+    child-5)
+(-> :type none parent (apiece (child-1 (child-2))))
+(=@ parent reason-1 reason-2 reason-3)
+(=@ child-1 native-image graal-nodejs graal-python)
+(=@ child-2 stuff)
+(-> :type none piece-type child-3)
+(=@ child-3 game bot)
+(-> :type none think child-4)
+(=@ child-4 translator)
+(-> :type none local child-5)
+(=@ child-5 server client)
+
+

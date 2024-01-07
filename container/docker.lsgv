@@ -1,0 +1,119 @@
+(! :layout "fdp" :sep 0.05 :splines "polyline")
+
+(+@ :type core :color #x333333 :filled-color #x999999 :fontcolor #x333333 :shape "doublecircle"
+    (d "docker")
+    )
+
+(+@ :type feature
+    (esys "Ecosystem")
+    (c "Usage")
+    (cp "Multi-container")
+    (ca "Self-contained")
+    (m "Multiple Platform")
+    (s "Orchestration")
+    )
+
+(+@ :type core
+    (prod-open "Open source\nprojects")
+    (prod-core "Docker CE\nDocker EE")
+    (prod-inc "Docker Inc")
+    (c-img "Image")
+    (c-con "Container")
+    (c-net "Network")
+    (c-vol "Volume")
+    (s-role "Role")
+    (s-service "Service")
+    (s-stack "Stack")
+    (s-lb "Load\nbalancing")
+    (s-no "Network\noverlays")
+    (s-ss "scheduling\nstrategy")
+    )
+
+(+@ :type folder
+    (prod-open-moby "Moby Project")
+    (prod-open-runc "Runc")
+    (prod-open-cond "Containerd")
+    (prod-open-net "LibNetwork")
+    (prod-open-sec "Notary")
+    (prod-open-hyp "HyperKit")
+    (prod-open-vpn "VPNKit")
+    (prod-open-data "DataKit")
+    (prod-open-swm "SwarmKit")
+    (prod-open-lin "LinuxKit")
+    (prod-open-inf "InfraKit")
+    )
+
+(+@ :type file
+    (c-file "Dockerfile")
+    (cp-file "YAML\ndocker-compose.yml")
+    (ca-cp-file "YAML\ndocker-compose.yml")
+    (ca-file "File: xx.dockerapp")
+    )
+
+(+@ :type program
+    (prod-core-com "Docker Compose")
+    (prod-core-mac "Docker Machine")
+    (prod-core-swm "Docker Swarm")
+    (prod-inc-mta "Modernize Traditional Apps")
+    (s-lb-ingress "Ingress")
+    )
+
+(+@ :type machine
+    (prod-core-hub "Docker Hub")
+    (prod-core-sto "Docker Store")
+    (prod-core-fmac "Docker for Mac")
+    (prod-core-fwin "Docker for Windows")
+    (prod-core-famz "Docker for Amazon Web Services")
+    (prod-core-fazr "Docker for Azure")
+    (c-con-reg "Registry")
+    )
+
+(+@ :type function
+    (exec-c-img "docker image [build|pull|push|...]")
+    (exec-c-con "docker [container] [attach|exec|run|ps|logs|update|start|stop]")
+    (exec-net "docker network")
+    (exec-vol "docker volume")
+    (exec-s-node "docker node [inspect|promote|demote|update|...]")
+    (exec-s-service "docker service [ls|scale|...]")
+    (exec-s-stack "docker stack [ls|ps|rm|deploy|services|...]")
+    (exec-cp "docker-compose [up|config|build|scale|...]")
+    (exec-ca "docker-app [init|save|push|render|...]")
+    (c-vol-map "-v host:container")
+    (c-net-port "-p host:container")
+    )
+
+(+@ :type component
+    (c-net-driver "drivers: [bridge|host|overlay|ipvlan|macvlan|none]")
+    (c-vol-driver "drivers: [overlay2|fuse-overlayfs|btrfs|zfs|vfs|devicemapper]")
+    )
+
+(+@ :type note
+    (cp-file-ver "version: 3")
+    (ca-cp-file-ver "version: 3.6")
+    (s-role-manager "Swarm Manager")
+    (s-role-worker "Swarm Worker")
+    (s-news "before 1.12: Docker Swarm\nafter 1.12: Swarm Mode")
+    (s-no-n "10.0.0.0/24")
+    (s-ss-s "Spread")
+    )
+
+(-> :type grow
+    d (esys (prod-open (prod-open-moby prod-open-runc prod-open-cond prod-open-net prod-open-sec prod-open-hyp prod-open-vpn prod-open-data prod-open-swm prod-open-lin prod-open-inf)
+             prod-core (prod-core-com prod-core-mac prod-core-hub prod-core-sto prod-core-swm prod-core-fmac prod-core-fwin prod-core-famz prod-core-fazr)
+             prod-inc (prod-inc-mta))
+       c (c-file
+          c-net (exec-net c-net-port c-net-driver)
+          c-vol (exec-vol c-vol-map c-vol-driver)
+          c-img (exec-c-img)
+          c-con (exec-c-con c-con-reg))
+       cp (exec-cp cp-file (cp-file-ver))
+       ca (exec-ca ca-file (ca-cp-file (ca-cp-file-ver)))
+       m
+       s (exec-s-node s-news s-role (s-role-manager s-role-worker) s-service (exec-s-service) s-stack (exec-s-stack) s-lb (s-lb-ingress) s-no (s-no-n) s-ss (s-ss-s))))
+
+(-> :type use c-img c-con-reg)
+(-> :type use s prod-core-swm)
+(-> :type use m prod-core-mac)
+(-> :type use cp prod-core-com)
+(-> :type use ca prod-inc-mta)
+

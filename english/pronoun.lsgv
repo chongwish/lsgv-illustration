@@ -1,0 +1,26 @@
+(! :layout "dot" :splines "true" :rankdir "LR" :rainbow-count 18)
+
+(+@ :type core :shape "doublecircle" :color #x000000 :fontcolor #xFFFFFF :filled-color #x7F7F7F
+    (pronoun "Pronouns"))
+
+(+@ :type rainbow-halo
+    (personal "Personal Pronouns")
+    (personal-person "Person")
+    (personal-person-1 "First")
+    (personal-person-2 "Second")
+    (personal-person-3 "Third")
+    (personal-number "Number")
+    (personal-number-1 "Singular")
+    (personal-number-2 "Plural")
+    (personal-form "Form")
+    (personal-form-1 "Subject")
+    (personal-form-2 "Object")
+    (personal-form-3 "Possessive")
+    (reflexive "Reflexive Pronouns")
+    (reflexive-1 "+self/+selves"))
+
+(-> :type grow
+    pronoun (personal (personal-person (personal-person-1 personal-person-2 personal-person-3)
+                       personal-number (personal-number-1 personal-number-2)
+                       personal-form (personal-form-1 personal-form-2 personal-form-3))
+             reflexive (reflexive-1)))

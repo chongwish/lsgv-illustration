@@ -1,0 +1,75 @@
+(! :layout "sfdp" :splines "polyline")
+
+(+@ :type core :color #x333333 :filled-color #x999999 :fontcolor #x333333 :shape "doublecircle"
+    (a "Architecture"))
+
+(+@ :type core
+    (c "Components")
+    (r "Runtimes")
+    (o "Orchestration"))
+
+(+@ :type feature
+    (mc "Master components")
+    (nc "Node components")
+    (p "Pod")
+    (state "StatefulSet")
+    (vol "Volume")
+    (ns "Namespaces")
+    (serv "Services")
+    (sto "Storage")
+    )
+
+(+@ :type component
+    (nc-p "Proxy")
+    (nc-k "Kubelet")
+    (mc-a "API server")
+    (mc-e "Etcd")
+    (mc-km "Kube controller manager")
+    (mc-cm "Cloud controller manager")
+    (mc-ks "Kube-scheduler")
+    (mc-d "DNS")
+    )
+
+(+@ :type program
+    (p-a "Application Container"))
+
+(+@ :type function
+    (cri "The Container Runtime Interface (CRI)")
+    (csi "Container Storage Interface (CSI)")
+    )
+
+(+@ :type machine
+    (r-d "Docker")
+    (r-r "Rkt")
+    (r-c "Cri-O")
+    (r-e "Rktnetes")
+    (o-n "Node")
+    (o-m "Master"))
+
+(+@ :type signature
+    (p-a-l "Label")
+    (p-a-a "Annotation"))
+
+(+@ :type data
+    (db "Database"))
+
+(-> :type grow
+    a (c (mc (mc-a mc-e mc-km mc-cm mc-ks mc-d)
+          nc (nc-p nc-k))
+       r (cri r-d r-r r-c r-e)
+       o (sto ns serv o-n (state (db) p (vol (csi) p-a (p-a-l p-a-a)))))
+    )
+
+(-> :type has o-n o-m)
+
+(-> :type use o-n (nc-k nc-p))
+
+(-> :type use o-m (mc-a mc-ks mc-km))
+
+(-> :type use :label "Label selectors" o-m p-a-l)
+
+(-> :type use serv p-a)
+
+(-> :type use sto (mc-e vol))
+
+(-> :type use p-a r)

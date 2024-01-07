@@ -1,0 +1,105 @@
+(! :layout "fdp" :sep "0.9" :splines "true" :rainbow-count 12)
+
+(+@ :type rainbow-halo :shape "doublecircle"
+    布隆维斯特
+    莎兰德)
+
+(+@ :type rainbow-halo
+    温纳斯壮
+    弗洛德
+    爱莉卡
+    亨利
+    马丁
+    海莉
+    西西莉亚
+    毕尔曼)
+
+(+@ :type rainbow-simple
+    阿妮塔
+    莫瑞尔
+    博格
+    林柏
+    阿曼斯基
+    潘格兰
+    阿布哈姆森
+    贝克曼
+    克里斯特
+    安妮卡
+    理查德
+    哈洛德
+    戈弗里
+    伊莎贝拉
+    法尔克
+    史特兰
+    布隆柏
+    佩妮拉
+    蕾贝卡
+    达曼
+    米尔德里德
+    托尔森
+    瘟疫
+    史宾塞
+    黄蜂)
+
+(-> :type grow :label "农场主丈夫" 海莉 史宾塞)
+(-> :type grow :label "定位到海莉位置" 瘟疫 布隆维斯特)
+(-> :type grow :label "黑客伙伴" 黄蜂 瘟疫)
+(-> :type grow :label "代号" 莎兰德 黄蜂)
+(-> :type grow :label "告知图片中的人是马丁" 安娜 布隆维斯特)
+(-> :type grow :label "解释法尔克说的话，告知次经与正典" 史特兰 布隆维斯特)
+(-> :type grow :label "员工" 马丁 托尔森)
+(-> :type grow :label "抹黑" 托尔森 布隆维斯特)
+(-> :type grow :label "挖掘照片中海莉震惊的东西" 布隆维斯特 米尔德里德)
+(-> :type grow :label "找到海莉笔记的人和蕾贝卡案与的范耶尔家族的关联" 莎兰德 蕾贝卡)
+(-> :type grow :label "派去千禧年的卧底" 温纳斯壮 达曼)
+(-> :type grow :label "老板" 达曼 布隆维斯特)
+(-> :type grow :label "猜测海莉与蕾贝卡涉及宗教的联系" 布隆维斯特 蕾贝卡)
+(-> :type grow :label "父亲，无意告诉海莉线索与圣经利末记关联" 佩妮拉 布隆维斯特)
+(-> :type grow :label "从照片发现线索" 布隆维斯特 布隆柏)
+(-> :type grow :label "利用航空身份，一直匿名将海莉的礼物给亨利" 阿妮塔 亨利)
+(-> :type grow :label "女儿" 哈洛德 阿妮塔)
+(-> :type grow :label "帮助海莉出逃，自己脱离家族，让海莉以自己名字活着" 阿妮塔 海莉)
+(-> :type grow :label "第二任监护人，被侵犯，后设计反制" 莎兰德 毕尔曼)
+(-> :type grow :label "外侄女，很看重其聪明" 亨利 西西莉亚)
+(-> :type grow :label "知道海莉遭遇，不想其追溯答案，床友" 西西莉亚 布隆维斯特)
+(-> :type grow :label "海莉失踪涉及到宗教，怀疑的对象" 莎兰德 法尔克)
+(-> :type grow :label "案件最后见到海莉的牧师" 法尔克 海莉)
+(-> :type grow :label "女儿，知道其遭遇,不管其生死" 伊莎贝拉 海莉)
+(-> :type grow :label "妻子" 戈弗里 伊莎贝拉)
+(-> :type grow :label "追捕导致其自杀" 莎兰德 马丁)
+(-> :type grow :label "外侄孙，一直不知道其行为" 亨利 马丁)
+(-> :type grow :label "很疼爱的外侄孙女，希望其继承家业" 亨利 海莉)
+(-> :type grow :label "发现诈死，劝与亨利见面" 布隆维斯特 海莉)
+(-> :type grow :label "发现其罪行，被关押折磨" 布隆维斯特 马丁)
+(-> :type grow :label "父亲，继承并发扬其恶行" 马丁 戈弗里)
+(-> :type grow :label "父亲，被侵犯，后误杀" 海莉 戈弗里)
+(-> :type grow :label "哥哥，被侵犯，发现到处杀女人罪行，诈死" 海莉 马丁)
+(-> :type grow :label "侄子" 亨利 戈弗里)
+(-> :type grow :label "儿子" 理查德 戈弗里)
+(-> :type grow :label "纳粹哥哥" 亨利 理查德)
+(-> :type grow :label "哥哥" 亨利 哈洛德)
+(-> :type grow :label "女儿" 哈洛德 西西莉亚)
+(-> :type grow :label "妹妹" 布隆维斯特 安妮卡)
+(-> :type grow :label "因为海莉案投资千禧年" 亨利 爱莉卡)
+(-> :type grow :label "请求调查海莉案真相" 亨利 布隆维斯特)
+(-> :type grow :label "千禧年共有者" 爱莉卡 克里斯特)
+(-> :type grow :label "千禧年共有者" 克里斯特 布隆维斯特)
+(-> :type grow :label "丈夫" 爱莉卡 贝克曼)
+(-> :type grow :label "对抗" 爱莉卡 温纳斯壮)
+(-> :type grow :label "千禧年共有者，特殊男女关系" 布隆维斯特 爱莉卡)
+(-> :type grow :label "前妻" 布隆维斯特 阿布哈姆森)
+(-> :type grow :label "调查海莉案委托人" 弗洛德 布隆维斯特)
+(-> :type grow :label "委托调查布隆维斯特" 弗洛德 莎兰德)
+(-> :type grow :label "老板" 弗洛德 亨利)
+(-> :type grow :label "第一个监护人，父女般关系" 莎兰德 潘格兰)
+(-> :type grow :label "揭露国际金融罪行" 莎兰德 温纳斯壮)
+(-> :type grow :label "上司，关系很好，父女般关系" 莎兰德 阿曼斯基)
+(-> :type grow :label "客户" 阿曼斯基 弗洛德)
+(-> :type grow :label "被调查对象，拜托调查海莉案，床友" 布隆维斯特 莎兰德)
+(-> :type grow :label "追了海莉案 40 年" 莫瑞尔 亨利)
+(-> :type grow :label "获取海莉案调查资料" 布隆维斯特 莫瑞尔)
+(-> :type grow :label "道不同的曾经同事" 博格 布隆维斯特)
+(-> :type grow :label "调查政商贪污罪行，涉及国际金融犯罪" 布隆维斯特 温纳斯壮)
+(-> :type grow :label "下属" 温纳斯壮 博格)
+(-> :type grow :label "中学好友，匿名告知温纳斯壮" 林柏 布隆维斯特)
+
